@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  margin-top: 10px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.circle {
+  width: 25rem;
+  height: 25rem;
+  background-color: #ece8e8;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(10, 20, 30);
+  border: 5px solid burlywood;
+}
+
+.point {
+  width: 1rem;
+  height: 1rem;
+  background-color: #595454;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+#hour-hand {
+  width: 100px;
+  height: 5px;
+  background-color: rgb(20, 1, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  transform: translateY(-50%);
+  border-radius: 20px 20px;
+}
+
+#minute-hand {
+  width: 150px;
+  height: 3.5px;
+  background-color: rgb(127, 103, 103);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  transform: translateY(-50%);
+  border-radius: 20px 20px;
+}
+
+#second-hand {
+  width: 175px;
+  height: 1px;
+  background-color: rgb(17, 14, 14);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  transform: translateY(-50%);
+  border-radius: 20px 20px;
+}
+
+.number {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(calc(30deg * var(--i))) translate(11rem) rotate(calc(-30deg * var(--i)));
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.rectangle {
+  width: 200px;
+  padding: 25px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#second, #minute, #hour, #ampm {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2rem;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgb(10, 20, 30);
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+#second {
+  animation: blink 1s infinite;
+  color: red;
+}
+
+#minute {
+  animation: blink 1s infinite;
+  color: green;
+}
+
+#hour {
+  animation: blink 1s infinite;
+  color: blue;
+}
+
+#ampm {
+  color: black;
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  text-align: center;
+  gap: 5px;
+}
+
+.alarm, .timer {
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 45%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+input[type="time"], .timer-inputs input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.timer-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-inputs input[type="number"] {
+  width: 50px;
+  text-align: center;
+}
+
+.timer-inputs span {
+  font-size: 1.5rem;
+  margin: 0 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:last-child {
+  margin-bottom: 0;
+}
